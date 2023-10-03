@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+        @import url('https://fonts.googleapis.com/css?family=Zilla+Slab|Zilla+Slab+Highlight');
+      
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            
+            color: #928686;
+            background:black;
+            letter-spacing:3px;
+            line-height: 45px;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+
+        }
+        .b4,.before{
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
+        .b4:after{
+             content: "";
+             position: absolute;
+             bottom: 0px;
+             left: 0px;
+             width: 100%;
+             height: calc(50%);
+             border-top: 3px solid red;
+             transform: rotateZ(-15deg);
+             animation: b4 0.90s ease-in;
+        }
+        .before:after{
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            animation: before 2s ease-out;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes b4 
+        {
+                  0% {
+                        width: 0;
+                     }
+                  100% {
+                         width: 100%;
+                       }
+        }
+        @keyframes before
+        {
+            0%{
+                width: 0;
+                background: rgb(255, 255, 0);
+                z-index: -1;
+            }
+            100%{
+                width: 100;
+                background: rgb(255, 255, 0);
+                z-index: -1;
+            }
+        }
+        .eng{
+            content: "";
+            bottom: 0px;
+            left: 0px;
+            text-decoration: none;
+            animation: eng 6s ease-out;
+            animation-delay: 3.4s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes eng
+        {
+            0%{
+                width: 0px;
+                color:#2bc994;
+                z-index: -1;
+            }
+            100%{
+                width: 100px;
+                color: #2bc994;
+                z-index: -1;
+            }
+        }
+        .no{
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
+        .no:after{
+             content: "";
+             position: absolute;
+             bottom: 0px;
+             left: 0px; 
+             top:50%;
+             width: 100%; 
+             height: calc(10%);
+             border-top: 3px solid red;
+             transform: rotatex(-15deg);
+             animation: no 1s ease-in;
+             animation-delay: 3.7s;
+            
+        }
+        @keyframes no 
+        {
+                  0% {
+                        width: 0;
+                     }
+                  100% {
+                         width: 100%;
+                       }
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text">
+            It's  not   <del class="b4"> " B4 "</del>, <br> It's   "<ins class="before"> BEFORE </ins>"...   <br>
+            You speak  <br>
+            <ins class="eng">ENGLISH</ins>. <del class="no">NOT BINGO.</del> 
+        </h2>
+    
+    </div>
+</body>
+</html>
